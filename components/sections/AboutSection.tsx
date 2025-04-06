@@ -26,25 +26,25 @@ const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
   ];
 
   return (
-    <section ref={ref} className="h-screen px-4 bg-muted/30 flex items-center snap-start">
-      <div className="max-w-6xl mx-auto">
+    <section ref={ref} className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center">About Me</h2>
-          <Card className="p-8">
-            <div className="grid md:grid-cols-2 gap-12">
+          <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
+          <Card className="p-6 md:p-8">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <div>
-                <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-4">My Journey</h3>
                 <p className="text-muted-foreground">
                   As a final-year Computer Science student at Instituto Superior de Engenharia do Porto, I bring expertise in full-stack development with a focus on React, JavaScript, and database management. I'm fluent in English and Portuguese, with strong collaboration and leadership skills. I'm passionate about creating innovative solutions and currently gaining hands-on experience as an intern at BRAINSTORM Labs.
                 </p>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-4">Technical Skills</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-4">Technical Skills</h3>
                 <div className="space-y-6">
                   {skills.map((skillGroup) => (
                     <motion.div

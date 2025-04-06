@@ -120,7 +120,7 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
-    <main className="min-h-screen bg-background relative snap-y snap-mandatory overflow-y-auto">
+    <main className="min-h-screen bg-background relative overflow-y-auto">
       <Navbar scrollProgress={scrollProgress} />
       <HeroSection />
       <AboutSection ref={aboutRef} />
