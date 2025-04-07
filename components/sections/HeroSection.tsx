@@ -5,6 +5,13 @@ import { ArrowDown, Github, Linkedin, Mail, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative px-4 snap-start overflow-y-auto py-20">
       <motion.div
@@ -28,11 +35,21 @@ export default function HeroSection() {
           My name is João Morais, I'm a full-stack developer with a passion for creating intuitive and impactful solutions that make a difference.
         </p>
         <div className="flex gap-3 md:gap-4 mt-6 md:mt-8 justify-center">
-          <Button variant="default" size="sm" className="text-xs md:text-sm" asChild>
-            <a href="#projects">View Projects</a>
+          <Button 
+            variant="default" 
+            size="sm" 
+            className="text-xs md:text-sm"
+            onClick={() => scrollToSection('projects')}
+          >
+            View Projects
           </Button>
-          <Button variant="outline" size="sm" className="text-xs md:text-sm" asChild>
-            <a href="#contact">Contact Me</a>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="text-xs md:text-sm"
+            onClick={() => scrollToSection('contact')}
+          >
+            Contact Me
           </Button>
         </div>
         <div className="flex gap-3 md:gap-4 mt-6 md:mt-8 justify-center">

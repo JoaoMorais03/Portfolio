@@ -27,7 +27,7 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
   ];
 
   return (
-    <section ref={ref} className="min-h-screen px-4 py-20 overflow-y-auto snap-start">
+    <section ref={ref} id="projects" className="min-h-screen px-4 py-20 overflow-y-auto snap-start">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

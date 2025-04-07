@@ -34,7 +34,7 @@ const ContactSection = forwardRef<HTMLElement>(function ContactSection(props, re
   }
 
   return (
-    <section ref={ref} className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
+    <section ref={ref} id="contact" className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
