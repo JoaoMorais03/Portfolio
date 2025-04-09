@@ -11,18 +11,28 @@ import { Github, ExternalLink } from "lucide-react";
 const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, ref) {
   const projects = [
     {
-      title: "Video Call Feature",
-      description: "Developed a video call feature enhancing real-time communication for BRAINSTORM Labs users.",
-      image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=1000&auto=format&fit=crop",
-      tags: ["React", "agora.io", "PostgreSQL", "Docker", "Node.js", "Next.js"],
-      category: "fullstack"
-    },
-    {
       title: "Hospital Management System",
       description: "Led team of four in designing and developing a comprehensive hospital management solution.",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop",
       tags: ["React", "Node.js", "MongoDB", "Git"],
-      category: "fullstack"
+      category: "fullstack",
+      status: "Completed"
+    },
+    {
+      title: "Video Call Feature",
+      description: "Developed a video call feature enhancing real-time communication for BRAINSTORM Labs users.",
+      image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=1000&auto=format&fit=crop",
+      tags: ["React", "agora.io", "PostgreSQL", "Docker", "Node.js", "Next.js"],
+      category: "fullstack",
+      status: "in-progress"
+    },
+    {
+      title: "Shared Life Organizer",
+      description: "A full-stack app to help families manage tasks, schedules, and expenses in one place.",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000&auto=format&fit=crop",
+      tags: ["React", "Node.js", "Next.js", "Git","SupaBase"],
+      category: "fullstack",
+      status: "in-progress"
     }
   ];
 
@@ -62,7 +72,18 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                         <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <div className="p-4 md:p-6 flex flex-col flex-1">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2">{project.title}</h3>
+                        <div className="flex justify-between items-center mb-2">
+                          <h3 className="text-lg md:text-xl font-semibold">{project.title}</h3>
+                          {project.status === "in-progress" ? (
+                            <Badge variant="outline" className="bg-amber-500/10 text-amber-500 border-amber-500/20">
+                              In Progress
+                            </Badge>
+                          ) : (
+                            <Badge variant="outline" className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                              Completed
+                            </Badge>
+                          )}
+                        </div>
                         <p className="text-muted-foreground mb-4 flex-grow text-sm md:text-base">
                           {project.description}
                         </p>
@@ -99,7 +120,18 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
                         <div className="p-4 md:p-6 flex flex-col flex-1">
-                          <h3 className="text-lg md:text-xl font-semibold mb-2">{project.title}</h3>
+                          <div className="flex justify-between items-center mb-2">
+                            <h3 className="text-lg md:text-xl font-semibold">{project.title}</h3>
+                            {project.status === "in-progress" ? (
+                              <Badge variant="outline" className="bg-amber-500/10 text-amber-500 border-amber-500/20">
+                                In Progress
+                              </Badge>
+                            ) : (
+                              <Badge variant="outline" className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                                Completed
+                              </Badge>
+                            )}
+                          </div>
                           <p className="text-muted-foreground mb-4 flex-grow text-sm md:text-base">
                             {project.description}
                           </p>
@@ -136,7 +168,18 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
                         <div className="p-4 md:p-6 flex flex-col flex-1">
-                          <h3 className="text-lg md:text-xl font-semibold mb-2">{project.title}</h3>
+                          <div className="flex justify-between items-center mb-2">
+                            <h3 className="text-lg md:text-xl font-semibold">{project.title}</h3>
+                            {project.status === "in-progress" ? (
+                              <Badge variant="outline" className="bg-amber-500/10 text-amber-500 border-amber-500/20">
+                                In Progress
+                              </Badge>
+                            ) : (
+                              <Badge variant="outline" className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20">
+                                Completed
+                              </Badge>
+                            )}
+                          </div>
                           <p className="text-muted-foreground mb-4 flex-grow text-sm md:text-base">
                             {project.description}
                           </p>
