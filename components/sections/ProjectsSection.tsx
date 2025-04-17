@@ -27,12 +27,21 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
       status: "in-progress"
     },
     {
-      title: "Shared Life Organizer",
+      title: "LifeSync",
       description: "A full-stack app to help families manage tasks, schedules, and expenses in one place.",
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000&auto=format&fit=crop",
-      tags: ["React", "Node.js", "Next.js", "Git","SupaBase"],
+      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop",
+      tags: ["React", "TypeScript", "Vite", "Node.js", "Tailwind CSS", "Shadcn UI", "Supabase", "Git"],
       category: "fullstack",
       status: "in-progress"
+    },
+    {
+      title: "Nexus Finance",
+      description: "A full-stack personal finance dashboard for tracking stock and cryptocurrency investments, viewing market data, and staying updated with financial news.",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1000&auto=format&fit=crop",
+      tags: ["Next.js", "React", "TypeScript", "Supabase", "Clerk", "Tailwind CSS", "Shadcn/ui", "Recharts", "TanStack Query", "Zod"],
+      category: "fullstack",
+      status: "in-progress",
+      website: "https://www.nexus-finance.live"
     }
   ];
 
@@ -92,6 +101,16 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                             <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>
                           ))}
                         </div>
+                        <div className="flex gap-2 mt-auto">
+                          {project.website && (
+                            <Button asChild size="sm" className="gap-1">
+                              <a href={project.website} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-4 w-4 mr-1" />
+                                View Site
+                              </a>
+                            </Button>
+                          )}
+                        </div>
                       </div>
                     </Card>
                   </motion.div>
@@ -140,6 +159,16 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                               <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>
                             ))}
                           </div>
+                          <div className="flex gap-2 mt-auto">
+                            {project.website && (
+                              <Button asChild size="sm" className="gap-1">
+                                <a href={project.website} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="h-4 w-4 mr-1" />
+                                  View Site
+                                </a>
+                              </Button>
+                            )}
+                          </div>
                         </div>
                       </Card>
                     </motion.div>
@@ -187,6 +216,16 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                             {project.tags.map((tag) => (
                               <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>
                             ))}
+                          </div>
+                          <div className="flex gap-2 mt-auto">
+                            {project.website && (
+                              <Button asChild size="sm" className="gap-1">
+                                <a href={project.website} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="h-4 w-4 mr-1" />
+                                  View Site
+                                </a>
+                              </Button>
+                            )}
                           </div>
                         </div>
                       </Card>

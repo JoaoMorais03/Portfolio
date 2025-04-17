@@ -43,14 +43,6 @@ export default function HeroSection() {
           >
             View Projects
           </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="text-xs md:text-sm"
-            onClick={() => scrollToSection('contact')}
-          >
-            Contact Me
-          </Button>
         </div>
         <div className="flex gap-3 md:gap-4 mt-6 md:mt-8 justify-center">
           <Button variant="ghost" size="icon" asChild>

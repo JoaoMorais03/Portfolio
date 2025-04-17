@@ -6,7 +6,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
-import ContactSection from "@/components/sections/ContactSection";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -19,7 +18,6 @@ export default function Home() {
   const aboutRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
-  const contactRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +26,6 @@ export default function Home() {
         { id: "about", ref: aboutRef },
         { id: "projects", ref: projectsRef },
         { id: "experience", ref: experienceRef },
-        { id: "contact", ref: contactRef },
       ];
 
       const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -65,7 +62,6 @@ export default function Home() {
       { id: "about", ref: aboutRef },
       { id: "projects", ref: projectsRef },
       { id: "experience", ref: experienceRef },
-      { id: "contact", ref: contactRef },
     ];
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -126,7 +122,6 @@ export default function Home() {
       <AboutSection ref={aboutRef} />
       <ProjectsSection ref={projectsRef} />
       <ExperienceSection ref={experienceRef} />
-      <ContactSection ref={contactRef} />
       <Footer />
     </main>
   );
