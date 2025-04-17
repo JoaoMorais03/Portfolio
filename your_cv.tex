@@ -1,0 +1,182 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+\usepackage[default]{sourcesanspro}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure ATS compatibility
+\pdfgentounicode=1
+
+% Custom commands (unchanged from your template)
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape João Pedro Carneiro de Morais} \\ \vspace{1pt}
+    \small +1 (571) 568 1007  +351 962041130 $|$ \href{https://portfolio-plum-five-48.vercel.app/}{portfolio-plum-five-48.vercel.app} $|$ \href{mailto:jp.morais800@gmail.com}{jp.morais800@gmail.com}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+  \resumeItemListStart
+    \resumeItem{Final-year Computer Science student with expertise in full-stack development, specializing in React, JavaScript, and database management (MongoDB, MySQL, PostgreSQL).}
+    \resumeItem{Currently interning at BRAINSTORM Labs, developing a video call feature using React, agora.io, Node.js, and Docker.}
+    \resumeItem{Led a team of four in a hospital management software project, delivering functional modules on time using React, Node.js, and MongoDB.}
+    \resumeItem{Fluent in English and Portuguese, with strong collaboration and leadership skills.}
+  \resumeItemListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Instituto Superior de Engenharia do Porto}{2021 -- Present}
+      {B.S. Informatics Engineer $|$ \textbf{GPA}: 13.06/20.0}
+      {Porto, Portugal}
+      \resumeItemListStart
+        \resumeItem{\textbf{Courses}: Web Development, Database Systems, Software Engineering, Data Structures and Algorithms}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    {\textbf{Front-end}: React, JavaScript, TypeScript, HTML, CSS, Tailwind CSS, Shadcn UI}\\
+    {\textbf{Back-end}: Node.js, Next.js}\\
+    {\textbf{Databases}: MongoDB, MySQL, PostgreSQL, Supabase}\\
+    {\textbf{DevOps}: Docker}\\
+    {\textbf{Tools \& Libraries}: Git, Clerk, TanStack Query, Zod, Recharts}\\
+    {\textbf{Programming Languages}: Java, C\#}}}
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textbf{Software Development Intern}}{2025 -- Present}
+      {BRAINSTORM Labs}{Remote}
+      \resumeItemListStart
+        \resumeItem{Developed a video call feature using React, agora.io, PostgreSQL, Docker, Node.js, and Next.js, enhancing real-time communication for users.}
+        \resumeItem{Integrated agora.io API for seamless video communication, managing user authentication and session handling.}
+        \resumeItem{Collaborated with the development team to ensure smooth integration into the existing platform.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textbf{Hospital Management Software}}{2024 -- 2025}
+      {Full Stack Project}{}
+      \resumeItemListStart
+        \resumeItem{Led a team of four in designing and developing a hospital management system using React, Node.js, and MongoDB.}
+        \resumeItem{Managed two backend systems to ensure data consistency and delivered functional modules (patient registration, appointment scheduling, medical records) on time.}
+        \resumeItem{Utilized Git for version control and coordinated with team members to meet project deadlines.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {\textbf{Nexus Finance}}{2024 -- Present}
+      {Full Stack Project}{www.nexus-finance.live}
+      \resumeItemListStart
+        \resumeItem{Developed a personal finance dashboard for tracking stock and cryptocurrency investments, viewing market data, and following financial news.}
+        \resumeItem{Implemented with Next.js, React, TypeScript, Supabase, Clerk authentication, Tailwind CSS, and Shadcn/ui.}
+        \resumeItem{Utilized Recharts for data visualization, TanStack Query for data fetching, and Zod for schema validation.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {\textbf{LifeSync}}{2024 -- Present}
+      {Full Stack Project}{}
+      \resumeItemListStart
+        \resumeItem{Building a comprehensive family management app to help families organize tasks, schedules, and expenses in a unified platform.}
+        \resumeItem{Developing with React, TypeScript, Vite, Node.js, Tailwind CSS, Shadcn UI, and Supabase.}
+        \resumeItem{Implementing real-time updates and collaborative features for shared family information management.}
+      \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+
+%-----------LEADERSHIP-----------
+\section{Leadership}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textbf{Team Leader, Hospital Management Software Project}}{2024 -- 2025}
+      {Instituto Superior de Engenharia do Porto}{Porto, Portugal}
+      \resumeItemListStart
+        \resumeItem{Led a team of four developers, coordinating tasks and ensuring timely delivery of project milestones.}
+        \resumeItem{Managed communication between team members and professors to align project goals and expectations.}
+        \resumeItem{Conducted code reviews and implemented best practices for code quality and project organization.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------ADDITIONAL INFORMATION-----------
+\section{Additional Information}
+  \resumeItemListStart
+    \resumeItem{\textbf{Languages}: Fluent in English and Portuguese}
+    \resumeItem{\textbf{Work Authorization}: EU citizen with U.S. permanent residency (Green Card)}
+    \resumeItem{\textbf{GitHub Profile}: \href{https://github.com/JoaoMorais03}{github.com/JoaoMorais03} (Includes projects demonstrating full-stack development skills)}
+  \resumeItemListEnd
+
+\end{document} 
