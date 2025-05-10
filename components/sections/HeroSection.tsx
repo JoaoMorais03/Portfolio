@@ -13,7 +13,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative px-4 snap-start overflow-y-auto py-20">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative px-4 snap-start overflow-y-auto py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

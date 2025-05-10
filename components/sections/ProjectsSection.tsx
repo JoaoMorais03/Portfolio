@@ -11,8 +11,8 @@ import { Github, ExternalLink } from "lucide-react";
 const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, ref) {
   const projects = [
     {
-      title: "Hospital Management System",
-      description: "Led team of four in designing and developing a comprehensive hospital management solution.",
+      title: "Hospital Management Software",
+      description: "Led a team of four in designing and developing a hospital management system using React, Node.js, and MongoDB.",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop",
       tags: ["React", "Node.js", "MongoDB", "Git"],
       category: "fullstack",
@@ -27,11 +27,11 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
       status: "in-progress"
     },
     {
-      title: "LifeSync",
-      description: "A full-stack app to help families manage tasks, schedules, and expenses in one place.",
+      title: "FamilySync",
+      description: "A comprehensive family management iOS app to help families organize tasks, schedules, and expenses in a unified platform.",
       image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop",
-      tags: ["React", "TypeScript", "Vite", "Node.js", "Tailwind CSS", "Shadcn UI", "Supabase", "Git"],
-      category: "fullstack",
+      tags: ["Swift", "Firebase", "iOS Development"],
+      category: "mobile",
       status: "in-progress"
     },
     {
@@ -42,6 +42,14 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
       category: "fullstack",
       status: "in-progress",
       website: "https://www.nexus-finance.live"
+    },
+    {
+      title: "Queima25",
+      description: "An interactive drinking game iOS app featuring multiple game modes including timed challenges, never-have-I-ever scenarios, and custom rules.",
+      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1000&auto=format&fit=crop",
+      tags: ["Swift", "iOS Development", "Game Development"],
+      category: "mobile",
+      status: "Completed"
     }
   ];
 
@@ -56,10 +64,10 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
         >
           <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
           <Tabs defaultValue="all" className="mb-8">
-            <TabsList className="grid w-full grid-cols-3 max-w-xs mx-auto">
+            <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
               <TabsTrigger value="all">All</TabsTrigger>
               <TabsTrigger value="fullstack">Full Stack</TabsTrigger>
-              <TabsTrigger value="frontend">Frontend</TabsTrigger>
+              <TabsTrigger value="mobile">Mobile</TabsTrigger>
             </TabsList>
             <TabsContent value="all" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -117,10 +125,10 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                 ))}
               </div>
             </TabsContent>
-            <TabsContent value="frontend" className="mt-6">
+            <TabsContent value="fullstack" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects
-                  .filter((project) => project.category === "frontend")
+                  .filter((project) => project.category === "fullstack")
                   .map((project, index) => (
                     <motion.div
                       key={project.title}
@@ -175,10 +183,10 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                   ))}
               </div>
             </TabsContent>
-            <TabsContent value="fullstack" className="mt-6">
+            <TabsContent value="mobile" className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects
-                  .filter((project) => project.category === "fullstack")
+                  .filter((project) => project.category === "mobile")
                   .map((project, index) => (
                     <motion.div
                       key={project.title}

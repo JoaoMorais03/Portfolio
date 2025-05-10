@@ -4,29 +4,44 @@ import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Layout, Database, Terminal } from "lucide-react";
+import { Layout, Database, Terminal, Smartphone } from "lucide-react";
 
 const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
   const skills = [
     { 
       category: "Frontend", 
-      items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript", "HTML", "CSS"],
+      items: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Shadcn UI"],
       icon: <Layout className="h-5 w-5" />
     },
     { 
       category: "Backend", 
-      items: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Python", "Java", "C#", "C++", "C"],
+      items: ["Node.js", "Next.js"],
       icon: <Database className="h-5 w-5" />
     },
     { 
-      category: "Tools", 
-      items: ["Git", "Docker","MySQL", "MongoDB","linux","PostgreSQL"],
+      category: "Mobile", 
+      items: ["Swift", "SwiftUI"],
+      icon: <Smartphone className="h-5 w-5" />
+    },
+    { 
+      category: "Databases", 
+      items: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "Firebase"],
+      icon: <Database className="h-5 w-5" />
+    },
+    { 
+      category: "DevOps & Tools", 
+      items: ["Git", "Docker", "Clerk", "Zod", "Recharts"],
+      icon: <Terminal className="h-5 w-5" />
+    },
+    { 
+      category: "Programming Languages", 
+      items: ["Java", "C#"],
       icon: <Terminal className="h-5 w-5" />
     },
   ];
 
   return (
-    <section ref={ref} className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
+    <section ref={ref} id="about" className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +60,7 @@ const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
               </div>
               <div>
                 <h3 className="text-xl md:text-2xl font-semibold mb-4">Technical Skills</h3>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {skills.map((skillGroup) => (
                     <motion.div
                       key={skillGroup.category}

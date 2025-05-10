@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 
 const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(props, ref) {
   return (
-    <section ref={ref} className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
+    <section ref={ref} id="experience" className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,10 +31,10 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <h4 className="font-medium">Software Development Intern</h4>
+                  <h4 className="font-medium">Software Developer Intern</h4>
                   <p className="text-xs md:text-sm text-muted-foreground">BRAINSTORM Labs • 2025 - Present</p>
                   <p className="mt-2 text-sm md:text-base text-muted-foreground">
-                    Developing a video call feature using React, agora.io, PostgreSQL, Docker, Node.js, and Next.js. Integrated agora.io API for seamless video communication, managing user authentication and session handling.
+                    Developing a video call feature using React, agora.io, PostgreSQL, Docker, Node.js, and Next.js, enhancing real-time communication for users. Integrated agora.io API for seamless video communication, managing user authentication and session handling. Collaborated with the development team to ensure smooth integration into the existing platform.
                   </p>
                 </motion.div>
                 <Separator />
@@ -47,7 +47,7 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
                   <h4 className="font-medium">Hospital Management Software Project</h4>
                   <p className="text-xs md:text-sm text-muted-foreground">Instituto Superior de Engenharia do Porto • 2024-2025</p>
                   <p className="mt-2 text-sm md:text-base text-muted-foreground">
-                    As part of the final year project I led a team of four developers in designing and developing a hospital management system using React, Node.js, and MongoDB.
+                    Led a team of four in designing and developing a hospital management system using React, Node.js, and MongoDB. Managed two backend systems to ensure data consistency and delivered functional modules (patient registration, appointment scheduling, medical records) on time. Utilized Git for version control and coordinated with team members to meet project deadlines.
                   </p>
                 </motion.div>
               </div>
@@ -65,7 +65,7 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
                   viewport={{ once: true }}
                 >
                   <h4 className="font-medium">B.S. Informatics Engineer</h4>
-                  <p className="text-xs md:text-sm text-muted-foreground">Instituto Superior de Engenharia do Porto • 2025 - Present</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Instituto Superior de Engenharia do Porto • 2021 - Present</p>
                   <p className="mt-2 text-sm md:text-base text-muted-foreground">
                     GPA: 13.06/20.0. Courses include Web Development, Database Systems, Software Engineering, Data Structures and Algorithms.
                   </p>
@@ -99,6 +99,19 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
                       <div className="flex flex-wrap gap-2">
                         <Badge variant="secondary" className="text-xs">EU Citizen</Badge>
                         <Badge variant="secondary" className="text-xs">U.S. Green Card</Badge>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <h4 className="text-xs md:text-sm font-medium text-muted-foreground">GitHub</h4>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="secondary" className="text-xs">
+                          <a href="https://github.com/JoaoMorais03" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            github.com/JoaoMorais03
+                          </a>
+                        </Badge>
                       </div>
                     </div>
                   </div>

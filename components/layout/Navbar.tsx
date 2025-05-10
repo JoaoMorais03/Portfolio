@@ -7,7 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useTheme } from "next-themes";
 
-export default function Navbar({ scrollProgress }: { scrollProgress: number }) {
+interface NavbarProps {
+  scrollProgress: number;
+  activeSection?: string;
+}
+
+export default function Navbar({ scrollProgress, activeSection }: NavbarProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -26,6 +31,40 @@ export default function Navbar({ scrollProgress }: { scrollProgress: number }) {
           Portfolio
         </motion.div>
         <div className="flex items-center gap-2 md:gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className={activeSection === "home" ? "text-primary" : ""}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              Home
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className={activeSection === "about" ? "text-primary" : ""}
+              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              About
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className={activeSection === "projects" ? "text-primary" : ""}
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Projects
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className={activeSection === "experience" ? "text-primary" : ""}
+              onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Experience
+            </Button>
+          </div>
           <Button
             variant="ghost"
             size="icon"

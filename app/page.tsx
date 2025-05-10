@@ -117,7 +117,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background relative overflow-y-auto">
-      <Navbar scrollProgress={scrollProgress} />
+      <Navbar scrollProgress={scrollProgress} activeSection={activeSection} />
       <HeroSection />
       <AboutSection ref={aboutRef} />
       <ProjectsSection ref={projectsRef} />
