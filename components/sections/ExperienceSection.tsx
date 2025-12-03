@@ -1,128 +1,271 @@
 "use client";
 
-import { forwardRef } from "react";
-import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { forwardRef, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Briefcase, GraduationCap, MapPin, Calendar, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+
+interface Experience {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  type: "current" | "past";
+  description: string[];
+  technologies: string[];
+}
+
+interface Education {
+  degree: string;
+  school: string;
+  location: string;
+  period: string;
+  details: string;
+}
 
 const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(props, ref) {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
+  const experiences: Experience[] = [
+    {
+      title: "Full-Stack Developer",
+      company: "Prozis",
+      location: "Porto, Portugal",
+      period: "July 2025 - Present",
+      type: "current",
+      description: [
+        "Core developer on Prozis Hub, one of the 2 largest internal systems at Europe's leading sports nutrition company, building enterprise PLM software with Vue3/Spring Boot serving 1000+ daily users",
+        "Entrusted with production deployment responsibilities typically reserved for senior engineers, independently shipping features across product development, QA, and operations teams",
+        "Architected RESTful APIs and optimized SQL Server queries, reducing data processing time by 35% through JPA native queries, indexing strategies, and Liquibase migrations",
+        "Engineered high-performance systems handling 200+ concurrent requests with sub-200ms response times; led code reviews and helped senior developers on architecture patterns",
+      ],
+      technologies: ["Vue3", "Spring Boot", "SQL Server", "REST APIs", "Liquibase", "Docker"],
+    },
+    {
+      title: "Software Developer Intern",
+      company: "BRAINSTORM Labs",
+      location: "Remote",
+      period: "Jan 2025 - June 2025",
+      type: "past",
+      description: [
+        "Built real-time video conferencing platform with React and Agora.io SDK supporting 10+ concurrent users with 99.5% uptime and adaptive bitrate streaming",
+        "Designed PostgreSQL schema and Node.js/Express backend; containerized with Docker",
+      ],
+      technologies: ["React", "Node.js", "PostgreSQL", "Docker", "Agora.io", "Express.js"],
+    },
+  ];
+
+  const education: Education = {
+    degree: "Bachelor of Science in Computer Engineering",
+    school: "Instituto Superior de Engenharia do Porto (ISEP)",
+    location: "Porto, Portugal",
+    period: "Sept 2021 - Sept 2025",
+    details: "Courses include Web Development, Database Systems, Software Engineering, Data Structures and Algorithms",
+  };
+
   return (
-    <section ref={ref} id="experience" className="min-h-screen px-4 py-20 bg-muted/30 flex items-center snap-start overflow-y-auto">
-      <div className="max-w-6xl mx-auto w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience & Education</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="p-4 md:p-6">
-              <div className="flex items-center gap-2 mb-4 md:mb-6">
-                <Briefcase className="h-5 w-5" />
-                <h3 className="text-lg md:text-xl font-semibold">Experience</h3>
-              </div>
-              <div className="space-y-4 md:space-y-6">
+    <section
+      ref={ref}
+      id="experience"
+      className="min-h-screen px-4 py-20 flex items-center snap-start overflow-hidden relative"
+    >
+      {/* Background decoration */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-full blur-3xl" />
+      </div>
+
+      <div ref={containerRef} className="max-w-6xl mx-auto w-full">
+        {/* Section header */}
+        <div className="text-center mb-12">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-medium text-muted-foreground uppercase tracking-widest"
+          >
+            Career Path
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-3xl md:text-4xl font-bold mt-2"
+          >
+            Experience &{" "}
+            <span className="gradient-text">Education</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Experience Timeline */}
+          <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex items-center gap-2 mb-6"
+            >
+              <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center">
+                <Briefcase className="h-5 w-5 text-white" />
+              </span>
+              <h3 className="text-xl font-semibold">Work Experience</h3>
+            </motion.div>
+
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-[19px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 opacity-20" />
+
+              {experiences.map((exp, index) => (
                 <motion.div
+                  key={exp.company}
                   initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
+                  className="relative pl-12 pb-8 last:pb-0"
                 >
-                  <h4 className="font-medium">Software Developer Intern</h4>
-                  <p className="text-xs md:text-sm text-muted-foreground">BRAINSTORM Labs • 2025 - Present</p>
-                  <p className="mt-2 text-sm md:text-base text-muted-foreground">
-                    Developing a video call feature using React, agora.io, PostgreSQL, Docker, Node.js, and Next.js, enhancing real-time communication for users. Integrated agora.io API for seamless video communication, managing user authentication and session handling. Collaborated with the development team to ensure smooth integration into the existing platform.
-                  </p>
-                </motion.div>
-                <Separator />
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <h4 className="font-medium">Hospital Management Software Project</h4>
-                  <p className="text-xs md:text-sm text-muted-foreground">Instituto Superior de Engenharia do Porto • 2024-2025</p>
-                  <p className="mt-2 text-sm md:text-base text-muted-foreground">
-                    Led a team of four in designing and developing a hospital management system using React, Node.js, and MongoDB. Managed two backend systems to ensure data consistency and delivered functional modules (patient registration, appointment scheduling, medical records) on time. Utilized Git for version control and coordinated with team members to meet project deadlines.
-                  </p>
-                </motion.div>
-              </div>
-            </Card>
-            <Card className="p-4 md:p-6">
-              <div className="flex items-center gap-2 mb-4 md:mb-6">
-                <GraduationCap className="h-5 w-5" />
-                <h3 className="text-lg md:text-xl font-semibold">Education</h3>
-              </div>
-              <div className="space-y-4 md:space-y-6">
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <h4 className="font-medium">B.S. Informatics Engineer</h4>
-                  <p className="text-xs md:text-sm text-muted-foreground">Instituto Superior de Engenharia do Porto • 2021 - Present</p>
-                  <p className="mt-2 text-sm md:text-base text-muted-foreground">
-                    GPA: 13.06/20.0. Courses include Web Development, Database Systems, Software Engineering, Data Structures and Algorithms.
-                  </p>
-                </motion.div>
-                <Separator />
-                <div className="flex items-center gap-2 mb-4 md:mb-6">
-                  <GraduationCap className="h-5 w-5" />
-                  <h3 className="text-lg md:text-xl font-semibold">Additional Information</h3>
-                </div>
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="space-y-3 md:space-y-4">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <h4 className="text-xs md:text-sm font-medium text-muted-foreground">Languages</h4>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary" className="text-xs">Fluent in English</Badge>
-                        <Badge variant="secondary" className="text-xs">Fluent in Portuguese</Badge>
-                      </div>
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 top-0">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      exp.type === "current"
+                        ? "bg-gradient-to-r from-emerald-500 to-teal-500"
+                        : "bg-gradient-to-r from-indigo-500 to-purple-500"
+                    }`}>
+                      <Briefcase className="h-4 w-4 text-white" />
                     </div>
-                    
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <h4 className="text-xs md:text-sm font-medium text-muted-foreground">Work Authorization</h4>
+                    {exp.type === "current" && (
+                      <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                      </span>
+                    )}
+                  </div>
+
+                  <Card className="p-6 glass card-highlight">
+                    {/* Header */}
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-4">
+                      <div>
+                        <h4 className="text-lg font-semibold">{exp.title}</h4>
+                        <p className="text-primary font-medium">{exp.company}</p>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary" className="text-xs">EU Citizen</Badge>
-                        <Badge variant="secondary" className="text-xs">U.S. Green Card</Badge>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <h4 className="text-xs md:text-sm font-medium text-muted-foreground">GitHub</h4>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary" className="text-xs">
-                          <a href="https://github.com/JoaoMorais03" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                            github.com/JoaoMorais03
-                          </a>
+                      {exp.type === "current" && (
+                        <Badge className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20">
+                          Current
                         </Badge>
+                      )}
+                    </div>
+
+                    {/* Meta */}
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="h-4 w-4" />
+                        {exp.location}
                       </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        {exp.period}
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                      {exp.description.map((item, i) => (
+                        <li key={i} className="flex gap-2">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education & Info */}
+          <div className="space-y-6">
+            {/* Education */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="flex items-center gap-2 mb-6">
+                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center">
+                  <GraduationCap className="h-5 w-5 text-white" />
+                </span>
+                <h3 className="text-xl font-semibold">Education</h3>
+              </div>
+
+              <Card className="p-6 glass card-highlight">
+                <h4 className="font-semibold mb-1">{education.degree}</h4>
+                <p className="text-primary font-medium text-sm mb-3">{education.school}</p>
+                <div className="flex flex-wrap gap-3 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-1">
+                    <MapPin className="h-4 w-4" />
+                    {education.location}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    {education.period}
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">{education.details}</p>
+              </Card>
+            </motion.div>
+
+            {/* Additional Info */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <Card className="p-6 glass card-highlight">
+                <h4 className="font-semibold mb-4">Quick Facts</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-2">Languages</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline">Portuguese (Native)</Badge>
+                      <Badge variant="outline">English (Fluent)</Badge>
                     </div>
                   </div>
-                </motion.div>
-              </div>
-            </Card>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-2">Work Authorization</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20">
+                        EU Citizen
+                      </Badge>
+                      <Badge variant="outline" className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20">
+                        U.S. Green Card
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-2">Interests</p>
+                    <p className="text-sm">
+                      Always learning, problem-solving, building high-performance systems
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 });
 
-export default ExperienceSection; 
+export default ExperienceSection;
