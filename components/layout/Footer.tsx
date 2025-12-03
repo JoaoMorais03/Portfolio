@@ -29,7 +29,7 @@ export default function Footer() {
     <footer className="py-12 px-4 border-t border-border/50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute bottom-0 left-1/4 w-1/2 h-32 bg-gradient-to-t from-primary/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-1/2 h-32 bg-muted/20 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto">
@@ -83,7 +83,7 @@ export default function Footer() {
             className="text-center md:text-right"
           >
             <p className="text-sm text-muted-foreground flex items-center gap-1 justify-center md:justify-end">
-              Built with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> in Porto
+              Built with <Heart className="h-3 w-3 fill-current" /> in Porto
             </p>
             <p className="text-xs text-muted-foreground mt-1">
               © {currentYear} All rights reserved.

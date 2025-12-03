@@ -15,16 +15,16 @@ interface FloatingShape {
 export default function AnimatedBackground() {
   const { scrollYProgress } = useScroll();
 
-  // Create gradient color transitions based on scroll
+  // Create subtle neutral gradient transitions based on scroll
   const gradientStart = useTransform(
     scrollYProgress,
     [0, 0.25, 0.5, 0.75, 1],
     [
-      "rgba(99, 102, 241, 0.15)",   // Indigo - Hero
-      "rgba(139, 92, 246, 0.12)",   // Violet - About
-      "rgba(59, 130, 246, 0.12)",   // Blue - Projects
-      "rgba(16, 185, 129, 0.12)",   // Emerald - Experience
-      "rgba(99, 102, 241, 0.15)",   // Back to Indigo
+      "rgba(120, 120, 120, 0.05)",
+      "rgba(100, 100, 100, 0.04)",
+      "rgba(110, 110, 110, 0.04)",
+      "rgba(90, 90, 90, 0.04)",
+      "rgba(120, 120, 120, 0.05)",
     ]
   );
 
@@ -32,11 +32,11 @@ export default function AnimatedBackground() {
     scrollYProgress,
     [0, 0.25, 0.5, 0.75, 1],
     [
-      "rgba(236, 72, 153, 0.1)",    // Pink
-      "rgba(99, 102, 241, 0.08)",   // Indigo
-      "rgba(139, 92, 246, 0.08)",   // Violet
-      "rgba(59, 130, 246, 0.08)",   // Blue
-      "rgba(236, 72, 153, 0.1)",    // Pink
+      "rgba(80, 80, 80, 0.03)",
+      "rgba(100, 100, 100, 0.03)",
+      "rgba(90, 90, 90, 0.03)",
+      "rgba(110, 110, 110, 0.03)",
+      "rgba(80, 80, 80, 0.03)",
     ]
   );
 
@@ -64,23 +64,17 @@ export default function AnimatedBackground() {
         } as any}
       />
 
-      {/* Animated mesh gradient blobs */}
+      {/* Subtle animated mesh gradient blobs */}
       {shapes.map((shape) => (
         <motion.div
           key={shape.id}
-          className="absolute rounded-full blur-3xl opacity-30 dark:opacity-20"
+          className="absolute rounded-full blur-3xl opacity-10 dark:opacity-5"
           style={{
             left: `${shape.x}%`,
             top: `${shape.y}%`,
             width: shape.size,
             height: shape.size,
-            background: `radial-gradient(circle, ${
-              shape.id % 3 === 0
-                ? "rgba(99, 102, 241, 0.4)"
-                : shape.id % 3 === 1
-                ? "rgba(139, 92, 246, 0.4)"
-                : "rgba(236, 72, 153, 0.4)"
-            } 0%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(120, 120, 120, 0.15) 0%, transparent 70%)`,
           }}
           animate={{
             x: [0, 30, -20, 0],
