@@ -59,10 +59,10 @@ export default function HeroSection() {
       id="home"
       className="min-h-screen flex flex-col items-center justify-center relative px-4 snap-start overflow-hidden"
     >
-      {/* Animated background gradient */}
+      {/* Subtle background gradient */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-r from-pink-500/20 to-violet-500/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-muted/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-muted/20 rounded-full blur-3xl" />
       </div>
 
       <motion.div
@@ -76,10 +76,10 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-medium">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border text-muted-foreground text-sm font-medium">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground/30 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground/50"></span>
             </span>
             Full-Stack Developer @ Prozis
           </span>
@@ -141,13 +141,12 @@ export default function HeroSection() {
           <Button
             size="lg"
             onClick={() => scrollToSection("projects")}
-            className="group relative overflow-hidden"
+            className="group"
           >
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="flex items-center gap-2">
               <Sparkles className="h-4 w-4" />
               View My Work
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </Button>
           <Button
             variant="outline"

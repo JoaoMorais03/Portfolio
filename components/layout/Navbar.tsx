@@ -124,7 +124,7 @@ export default function Navbar({ scrollProgress, activeSection }: NavbarProps) {
         {/* Scroll Progress */}
         <div className="h-0.5 bg-muted">
           <motion.div
-            className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+            className="h-full bg-foreground/50"
             style={{ width: `${scrollProgress}%` }}
             transition={{ duration: 0.1 }}
           />

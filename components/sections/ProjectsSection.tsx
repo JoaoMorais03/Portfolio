@@ -118,8 +118,8 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
     >
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-1/2 h-1/3 bg-gradient-to-b from-blue-500/5 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-1/2 h-1/3 bg-gradient-to-t from-purple-500/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-1/2 h-1/3 bg-muted/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-1/2 h-1/3 bg-muted/20 rounded-full blur-3xl" />
       </div>
 
       <div ref={containerRef} className="max-w-6xl mx-auto">
@@ -201,11 +201,11 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(props, 
                     {/* Status badge */}
                     <div className="absolute top-3 right-3">
                       {project.status === "in-progress" ? (
-                        <Badge className="bg-amber-500/90 text-white border-0">
+                        <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm">
                           In Progress
                         </Badge>
                       ) : (
-                        <Badge className="bg-emerald-500/90 text-white border-0">
+                        <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm">
                           Completed
                         </Badge>
                       )}

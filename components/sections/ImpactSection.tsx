@@ -65,7 +65,7 @@ const ImpactSection = forwardRef<HTMLElement>(function ImpactSection(props, ref)
       suffix: "+",
       label: "Daily Users",
       description: "Serving enterprise PLM software",
-      color: "from-blue-500 to-cyan-500",
+      color: "bg-muted",
     },
     {
       icon: <TrendingUp className="h-6 w-6" />,
@@ -73,7 +73,7 @@ const ImpactSection = forwardRef<HTMLElement>(function ImpactSection(props, ref)
       suffix: "%",
       label: "Faster Processing",
       description: "Query optimization impact",
-      color: "from-emerald-500 to-teal-500",
+      color: "bg-muted",
     },
     {
       icon: <Server className="h-6 w-6" />,
@@ -81,7 +81,7 @@ const ImpactSection = forwardRef<HTMLElement>(function ImpactSection(props, ref)
       suffix: "+",
       label: "Concurrent Requests",
       description: "High-load system handling",
-      color: "from-purple-500 to-pink-500",
+      color: "bg-muted",
     },
     {
       icon: <Clock className="h-6 w-6" />,
@@ -89,7 +89,7 @@ const ImpactSection = forwardRef<HTMLElement>(function ImpactSection(props, ref)
       suffix: "ms",
       label: "Response Time",
       description: "Sub-200ms API responses",
-      color: "from-orange-500 to-red-500",
+      color: "bg-muted",
     },
   ];
 
@@ -102,7 +102,7 @@ const ImpactSection = forwardRef<HTMLElement>(function ImpactSection(props, ref)
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-muted/20 rounded-full blur-3xl" />
       </div>
 
       <div ref={containerRef} className="max-w-6xl mx-auto">
@@ -153,7 +153,7 @@ const ImpactSection = forwardRef<HTMLElement>(function ImpactSection(props, ref)
               <div className="relative p-6 rounded-2xl bg-card border border-border/50 hover:border-border transition-colors text-center h-full">
                 {/* Icon */}
                 <div
-                  className={`w-12 h-12 mx-auto rounded-xl bg-gradient-to-r ${metric.color} flex items-center justify-center text-white mb-4`}
+                  className={`w-12 h-12 mx-auto rounded-xl ${metric.color} border border-border flex items-center justify-center mb-4`}
                 >
                   {metric.icon}
                 </div>

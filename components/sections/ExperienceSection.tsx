@@ -73,8 +73,8 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
     >
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-muted/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-muted/20 rounded-full blur-3xl" />
       </div>
 
       <div ref={containerRef} className="max-w-6xl mx-auto w-full">
@@ -108,15 +108,15 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex items-center gap-2 mb-6"
             >
-              <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center">
-                <Briefcase className="h-5 w-5 text-white" />
+              <span className="w-10 h-10 rounded-xl bg-muted border border-border flex items-center justify-center">
+                <Briefcase className="h-5 w-5" />
               </span>
               <h3 className="text-xl font-semibold">Work Experience</h3>
             </motion.div>
 
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-[19px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 opacity-20" />
+              <div className="absolute left-[19px] top-0 bottom-0 w-0.5 bg-border" />
 
               {experiences.map((exp, index) => (
                 <motion.div
@@ -128,17 +128,13 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-0 top-0">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      exp.type === "current"
-                        ? "bg-gradient-to-r from-emerald-500 to-teal-500"
-                        : "bg-gradient-to-r from-indigo-500 to-purple-500"
-                    }`}>
-                      <Briefcase className="h-4 w-4 text-white" />
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-muted border border-border">
+                      <Briefcase className="h-4 w-4" />
                     </div>
                     {exp.type === "current" && (
                       <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground/30 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-foreground/50"></span>
                       </span>
                     )}
                   </div>
@@ -151,7 +147,7 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
                         <p className="text-primary font-medium">{exp.company}</p>
                       </div>
                       {exp.type === "current" && (
-                        <Badge className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20">
+                        <Badge variant="outline">
                           Current
                         </Badge>
                       )}
@@ -202,8 +198,8 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="w-10 h-10 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center">
-                  <GraduationCap className="h-5 w-5 text-white" />
+                <span className="w-10 h-10 rounded-xl bg-muted border border-border flex items-center justify-center">
+                  <GraduationCap className="h-5 w-5" />
                 </span>
                 <h3 className="text-xl font-semibold">Education</h3>
               </div>
@@ -244,10 +240,10 @@ const ExperienceSection = forwardRef<HTMLElement>(function ExperienceSection(pro
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Work Authorization</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20">
+                      <Badge variant="outline">
                         EU Citizen
                       </Badge>
-                      <Badge variant="outline" className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20">
+                      <Badge variant="outline">
                         U.S. Green Card
                       </Badge>
                     </div>

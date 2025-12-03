@@ -31,19 +31,19 @@ const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
     {
       category: "Backend",
       icon: <Server className="h-5 w-5" />,
-      color: "from-blue-500 to-cyan-500",
+      color: "bg-muted",
       items: ["Java", "Spring Boot", "Node.js", "Express.js", "Python", "REST APIs", "WebSockets"],
     },
     {
       category: "Frontend",
       icon: <Layout className="h-5 w-5" />,
-      color: "from-purple-500 to-pink-500",
+      color: "bg-muted",
       items: ["Vue3", "React", "Next.js", "TypeScript", "JavaScript", "Swift/SwiftUI", "Tailwind CSS"],
     },
     {
       category: "Data & DevOps",
       icon: <Cloud className="h-5 w-5" />,
-      color: "from-emerald-500 to-teal-500",
+      color: "bg-muted",
       items: ["PostgreSQL", "SQL Server", "MongoDB", "Docker", "AWS", "Git", "CI/CD", "Liquibase"],
     },
   ];
@@ -63,8 +63,8 @@ const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
     >
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-violet-500/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-muted/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-muted/20 rounded-full blur-3xl" />
       </div>
 
       <div ref={containerRef} className="max-w-6xl mx-auto w-full">
@@ -103,8 +103,8 @@ const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
             >
               <Card className="p-6 md:p-8 h-full glass card-highlight">
                 <h3 className="text-xl md:text-2xl font-semibold mb-4 flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center">
-                    <Code2 className="h-4 w-4 text-white" />
+                  <span className="w-8 h-8 rounded-lg bg-muted border border-border flex items-center justify-center">
+                    <Code2 className="h-4 w-4" />
                   </span>
                   My Journey
                 </h3>
@@ -151,8 +151,8 @@ const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
             >
               <Card className="p-6 md:p-8 h-full glass card-highlight">
                 <h3 className="text-xl md:text-2xl font-semibold mb-6 flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center">
-                    <Terminal className="h-4 w-4 text-white" />
+                  <span className="w-8 h-8 rounded-lg bg-muted border border-border flex items-center justify-center">
+                    <Terminal className="h-4 w-4" />
                   </span>
                   Technical Skills
                 </h3>
@@ -165,7 +165,7 @@ const AboutSection = forwardRef<HTMLElement>(function AboutSection(props, ref) {
                       transition={{ duration: 0.5, delay: 0.5 + groupIndex * 0.1 }}
                     >
                       <div className="flex items-center gap-2 mb-3">
-                        <span className={`w-6 h-6 rounded-md bg-gradient-to-r ${skillGroup.color} flex items-center justify-center text-white`}>
+                        <span className={`w-6 h-6 rounded-md ${skillGroup.color} border border-border flex items-center justify-center`}>
                           {skillGroup.icon}
                         </span>
                         <h4 className="text-sm font-semibold">{skillGroup.category}</h4>
