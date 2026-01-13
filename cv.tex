@@ -1,0 +1,143 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Times New Roman font as requested
+\usepackage{mathptmx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape João Pedro Carneiro de Morais} \\ \vspace{1pt}
+    \small +351 962-041-130 $|$ \href{mailto:jp.morais800@gmail.com}{jp.morais800@gmail.com} $|$
+    \href{https://www.linkedin.com/in/joão-pedro-de-morais-8922782b8}{LinkedIn} $|$
+    \href{https://github.com/JoaoMorais03}{GitHub} $|$
+    \href{https://portfolio-plum-five-48.vercel.app/}{Portfolio}
+\end{center}
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Backend}: Java, Spring Boot, Node.js, Express.js, Python, REST APIs, WebSockets \\
+    \textbf{Frontend}: React, Next.js, Vue3, TypeScript, JavaScript, Swift/SwiftUI, Tailwind CSS \\
+    \textbf{Data \& DevOps}: PostgreSQL, SQL Server, MongoDB, Docker, AWS (EC2, S3, RDS), Git, CI/CD, Liquibase
+    }}
+ \end{itemize}
+
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Prozis}{Porto, Portugal}
+      {Full-Stack Developer}{July 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Core developer on \textbf{Prozis Hub}, one of 2 largest internal systems at Europe's leading sports nutrition company, building enterprise PLM software with \textbf{Vue3/Spring Boot} serving \textbf{1000+ daily users}}
+        \resumeItem{Entrusted with \textbf{production deployment responsibilities} typically reserved for senior engineers, independently shipping features across product development, QA, and operations teams}
+        \resumeItem{Architected RESTful APIs and optimized SQL Server queries, \textbf{reducing data processing time by 35\%} through JPA native queries, indexing strategies, and Liquibase migrations}
+        \resumeItem{Engineered high-performance systems handling \textbf{200+ concurrent requests} with sub-200ms response times; led code reviews and mentored junior developers on architecture patterns}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Flavibyte}{Chaves, Portugal}
+      {Founder \& Lead Developer}{Jan 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Founded software company delivering \textbf{custom full-stack solutions} for SMB clients; acquired \textbf{2 clients} through direct outreach and referrals}
+        \resumeItem{Building \textbf{Gráfica Sinal e-commerce platform}: React/Next.js storefront with Node.js backend, AWS infrastructure (EC2, S3, RDS), integrated payment processing, and admin dashboard}
+        \resumeItem{Developing \textbf{Porfía dos Leitões restaurant system}: table reservation management, real-time availability, automated confirmation emails, and customer analytics dashboard}
+        \resumeItem{Managing full project lifecycle from client requirements gathering to deployment, implementing CI/CD pipelines and providing ongoing maintenance and support}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {BRAINSTORM Labs}{Remote}
+      {Software Developer Intern}{Jan 2025 -- June 2025}
+      \resumeItemListStart
+        \resumeItem{Built real-time video conferencing platform with \textbf{React} and \textbf{Agora.io SDK} supporting \textbf{10+ concurrent users} with 99.5\% uptime and adaptive bitrate streaming}
+        \resumeItem{Designed PostgreSQL schema and Node.js/Express backend; containerized with \textbf{Docker} for consistent deployment across environments}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Nexus Finance} $|$ \emph{Next.js, TypeScript, Supabase, TanStack Query, Clerk}}{Nov 2024 -- Jan 2025}
+      \resumeItemListStart
+        \resumeItem{Built financial dashboard for tracking stock and crypto portfolios with real-time price updates via Alpha Vantage and CoinGecko APIs; implemented secure OAuth with MFA}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Hospital Management System} $|$ \emph{React, Node.js, MongoDB, Docker, Jest}}{Sept 2024 -- Jan 2025}
+      \resumeItemListStart
+        \resumeItem{Led team of 4 developers building healthcare platform with role-based access for doctors, nurses, and administrators; implemented real-time appointment scheduling with conflict detection}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{FamilySync} $|$ \emph{Swift, SwiftUI, Firebase, Core Data}}{Jan 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Developing native iOS family management app with offline-first architecture using Core Data sync; push notifications via Firebase Cloud Messaging for task coordination}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Instituto Superior de Engenharia do Porto (ISEP)}{Porto, Portugal}
+      {Bachelor of Science in Computer Engineering}{Sept 2021 -- Sept 2025}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Data Structures \& Algorithms, Software Engineering, Database Systems, Distributed Systems, Computer Networks}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\end{document}
