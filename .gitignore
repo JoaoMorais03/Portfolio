@@ -9,10 +9,6 @@
 .DS_Store
 *.pem
 
-# old frameworks
-.next
-.playwright-mcp
-
 # debug
 npm-debug.log*
 
