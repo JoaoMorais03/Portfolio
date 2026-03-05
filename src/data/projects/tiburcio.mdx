@@ -1,0 +1,28 @@
+---
+title: "Tiburcio"
+description: "Open-source RAG agent that indexes your codebase into a vector database, then answers developer questions grounded in your actual code. Works as a web chat UI and as an MCP server for Claude Code."
+type: "personal"
+status: "live"
+technologies: ["TypeScript", "Node.js", "Vue 3", "Hono", "MCP", "RAG", "Claude AI", "Mastra AI", "Qdrant", "PostgreSQL", "Drizzle ORM", "Redis", "BullMQ", "Docker", "Vitest"]
+featured: true
+github: "https://github.com/JoaoMorais03/Tiburcio"
+order: 1
+---
+
+## What it does
+
+Tiburcio indexes a codebase — source files, architecture docs, team standards — into a Qdrant vector database. Developers can then ask questions and get answers grounded in their actual code, not generic suggestions.
+
+It ships in two forms: a web chat UI built with Vue 3 and Hono, and an MCP server so Claude Code can query the same knowledge base while you're coding.
+
+## How it works
+
+Documents go through chunking and embedding, then get stored in Qdrant. At query time it uses hybrid search — BM25 for keyword matching plus dense vectors for semantic similarity, fused together with RRF. Indexing runs on a schedule through BullMQ job queues backed by Redis.
+
+The whole thing is containerized with Docker. PostgreSQL (via Drizzle ORM) handles metadata and user state. There are 162 automated tests covering the core flows.
+
+## Why I built it
+
+I wanted a way to onboard faster on large codebases at work. The existing tools either hallucinated too much or didn't understand project-specific conventions. Started as a learning project to dig into RAG and vector search, then grew into something actually useful.
+
+It's MIT licensed, currently at v1.2.1, and being adopted at Prozis for internal use.

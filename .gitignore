@@ -1,0 +1,33 @@
+# dependencies
+/node_modules
+
+# astro
+/dist
+/.astro
+
+# misc
+.DS_Store
+*.pem
+
+# old frameworks
+.next
+.playwright-mcp
+
+# debug
+npm-debug.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo

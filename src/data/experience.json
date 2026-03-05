@@ -1,0 +1,43 @@
+[
+  {
+    "id": "prozis",
+    "role": "Full-Stack Developer",
+    "company": "Prozis",
+    "location": "Porto, Portugal",
+    "startDate": "July 2025",
+    "bullets": [
+      "Core developer on Prozis Hub, one of 2 largest internal systems at Europe's leading sports nutrition company",
+      "Building enterprise PLM software with Vue3/Spring Boot serving 1,000+ daily users",
+      "Entrusted with production deployment responsibilities typically reserved for senior engineers",
+      "Reduced data processing time by 35% through query optimization and indexing strategies"
+    ],
+    "technologies": ["Vue3", "Spring Boot", "SQL Server", "JPA", "Liquibase"]
+  },
+  {
+    "id": "flavibyte",
+    "role": "Side Projects",
+    "company": "Flavibyte",
+    "location": "Chaves, Portugal",
+    "startDate": "Jan 2025",
+    "bullets": [
+      "Registered a small company to take on freelance projects outside of my day job",
+      "Rebuilding GraficaSinal.pt — an e-commerce site for a print company, using Next.js and Express",
+      "Built an internal platform to manage clients and track project health, deployed on AWS Lightsail"
+    ],
+    "technologies": ["React", "Next.js", "Node.js", "AWS", "PostgreSQL"]
+  },
+  {
+    "id": "brainstorm-labs",
+    "role": "Software Developer Intern",
+    "company": "BRAINSTORM Labs",
+    "location": "Remote",
+    "startDate": "Jan 2025",
+    "endDate": "June 2025",
+    "bullets": [
+      "Built real-time video conferencing platform with React and Agora.io SDK",
+      "Designed PostgreSQL schema and Node.js/Express backend",
+      "Containerized application with Docker for consistent deployment"
+    ],
+    "technologies": ["React", "Node.js", "PostgreSQL", "Docker", "Agora.io"]
+  }
+]
