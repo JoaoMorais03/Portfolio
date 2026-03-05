@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const experience = await getCollection('experience');
+const education = await getCollection('education');
+
+const skills = {
+  'Frontend': ['React', 'Next.js', 'Vue3', 'TypeScript', 'JavaScript', 'Tailwind CSS'],
+  'Backend': ['Node.js', 'Express.js', 'Spring Boot', 'Java', 'Python', 'REST APIs', 'WebSockets'],
+  'Mobile': ['Swift', 'SpriteKit', 'iOS'],
+  'Database': ['PostgreSQL', 'SQL Server', 'MongoDB'],
+  'AI & Search': ['RAG', 'MCP', 'Qdrant', 'Redis', 'BullMQ', 'Drizzle ORM'],
+  'DevOps & Cloud': ['Docker', 'AWS (Lightsail, S3, CloudFront)', 'Git', 'CI/CD', 'Liquibase'],
+};
+---
+
+<BaseLayout title="CV | João Morais" description="Resume of João Morais — Full-Stack Developer based in Porto, Portugal.">
+  <Navbar />
+
+  <main class="pt-14">
+    <section class="py-20 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-baseline justify-between mb-10">
+          <div>
+            <h1 class="text-2xl font-bold tracking-tight mb-1">João Morais</h1>
+            <p class="text-text-muted">Full-Stack Developer · Porto, Portugal</p>
+          </div>
+          <a
+            href="/cv.pdf"
+            download="Joao_Morais_CV.pdf"
+            class="text-sm text-text-muted hover:text-text border border-border hover:border-border-hover rounded px-3 py-1.5 transition-colors duration-150 font-mono shrink-0"
+          >
+            Download PDF
+          </a>
+        </div>
+
+        <!-- Contact -->
+        <div class="flex flex-wrap gap-4 text-sm text-text-muted mb-12">
+          <a href="mailto:jp.morais800@gmail.com" class="hover:text-text transition-colors duration-150">jp.morais800@gmail.com</a>
+          <span class="text-border">·</span>
+          <a href="https://github.com/JoaoMorais03" target="_blank" rel="noopener noreferrer" class="hover:text-text transition-colors duration-150">GitHub</a>
+          <span class="text-border">·</span>
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-de-morais-8922782b8" target="_blank" rel="noopener noreferrer" class="hover:text-text transition-colors duration-150">LinkedIn</a>
+        </div>
+
+        <!-- Experience -->
+        <div class="mb-12">
+          <h2 class="text-sm font-mono text-text-muted uppercase tracking-wider mb-6">Experience</h2>
+          <div class="space-y-8">
+            {experience.map((exp) => {
+              const period = exp.data.endDate
+                ? `${exp.data.startDate} — ${exp.data.endDate}`
+                : `${exp.data.startDate} — Present`;
+              return (
+                <div>
+                  <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 mb-1.5">
+                    <div>
+                      <h3 class="font-semibold">{exp.data.role}</h3>
+                      <p class="text-sm text-text-muted">{exp.data.company} · {exp.data.location}</p>
+                    </div>
+                    <span class="text-xs font-mono text-text-muted shrink-0">{period}</span>
+                  </div>
+                  <ul class="space-y-1 mt-2">
+                    {exp.data.bullets.map((bullet: string) => (
+                      <li class="text-sm text-text-muted leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1 before:h-1 before:rounded-full before:bg-text-muted/40">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="mb-12">
+          <h2 class="text-sm font-mono text-text-muted uppercase tracking-wider mb-6">Education</h2>
+          {education.map((edu) => (
+            <div>
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 mb-1.5">
+                <div>
+                  <h3 class="font-semibold">{edu.data.degree}</h3>
+                  <p class="text-sm text-text-muted">{edu.data.institution} · {edu.data.location}</p>
+                </div>
+                <span class="text-xs font-mono text-text-muted shrink-0">{edu.data.startDate} — {edu.data.endDate}</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                {edu.data.courses.map((course: string) => (
+                  <span class="px-2 py-0.5 text-xs font-mono text-text-muted border border-border rounded">
+                    {course}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Skills -->
+        <div class="mb-12">
+          <h2 class="text-sm font-mono text-text-muted uppercase tracking-wider mb-6">Skills</h2>
+          <div class="space-y-4">
+            {Object.entries(skills).map(([category, items]) => (
+              <div>
+                <h3 class="text-sm font-medium mb-2">{category}</h3>
+                <div class="flex flex-wrap gap-1.5">
+                  {items.map((skill) => (
+                    <span class="px-2 py-0.5 text-xs font-mono text-text-muted border border-border rounded">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div>
+          <h2 class="text-sm font-mono text-text-muted uppercase tracking-wider mb-6">Languages</h2>
+          <div class="flex gap-6 text-sm">
+            <div>
+              <span class="text-text font-medium">Portuguese</span>
+              <span class="text-text-muted"> · Native</span>
+            </div>
+            <div>
+              <span class="text-text font-medium">English</span>
+              <span class="text-text-muted"> · Fluent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  @media print {
+    nav, footer, .print\\:hidden {
+      display: none !important;
+    }
+    main {
+      padding-top: 0 !important;
+    }
+    section {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    body {
+      color: black !important;
+      background: white !important;
+    }
+    * {
+      color: black !important;
+      border-color: #ddd !important;
+    }
+    a {
+      text-decoration: none !important;
+    }
+  }
+</style>

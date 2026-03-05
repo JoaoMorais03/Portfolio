@@ -1,0 +1,18 @@
+[
+  {
+    "id": "isep",
+    "degree": "Bachelor of Science in Computer Engineering",
+    "institution": "Instituto Superior de Engenharia do Porto (ISEP)",
+    "location": "Porto, Portugal",
+    "startDate": "Sept 2021",
+    "endDate": "Sept 2025",
+    "courses": [
+      "Data Structures",
+      "Algorithms",
+      "Software Engineering",
+      "Database Systems",
+      "Distributed Systems",
+      "Computer Networks"
+    ]
+  }
+]

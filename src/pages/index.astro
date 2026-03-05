@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ExperienceEntry from '../components/ExperienceEntry.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import photo from '../assets/photo.jpeg';
+
+const allExperience = await getCollection('experience');
+const featuredProjects = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="João Morais | Full-Stack Developer">
+  <Navbar />
+
+  <main class="pt-14">
+    <!-- Hero -->
+    <section class="hero-lines py-16 sm:py-20 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-5 mb-6">
+          <Image
+            src={photo}
+            alt="João Morais"
+            width={200}
+            height={200}
+            quality={90}
+            class="rounded-full w-16 h-16 sm:w-20 sm:h-20 object-cover ring-2 ring-accent/30 ring-offset-2 ring-offset-bg"
+          />
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight leading-tight">
+              João Morais
+            </h1>
+            <p class="text-text-muted mt-0.5">Full-Stack Developer</p>
+          </div>
+        </div>
+
+        <p class="text-text-muted leading-relaxed max-w-lg">
+          Building enterprise software at <span class="text-text font-medium">Prozis</span>.
+          Side projects and freelance work through <span class="text-accent font-medium">Flavibyte</span>.
+        </p>
+
+        <div class="flex items-center gap-4 mt-5">
+          <a
+            href="https://github.com/JoaoMorais03"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-text-muted hover:text-text transition-colors duration-200"
+          >
+            GitHub
+          </a>
+          <span class="text-border-hover">·</span>
+          <a
+            href="https://www.linkedin.com/in/jo%C3%A3o-pedro-de-morais-8922782b8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-text-muted hover:text-text transition-colors duration-200"
+          >
+            LinkedIn
+          </a>
+          <span class="text-border-hover">·</span>
+          <a
+            href="mailto:jp.morais800@gmail.com"
+            class="text-sm text-text-muted hover:text-text transition-colors duration-200"
+          >
+            Email
+          </a>
+          <span class="text-border-hover">·</span>
+          <a
+            href="/cv"
+            class="text-sm text-text-muted hover:text-text transition-colors duration-200"
+          >
+            CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="fade-in py-12 sm:py-16 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-xl font-bold tracking-tight mb-4 section-heading">About</h2>
+        <p class="text-text-muted leading-relaxed max-w-xl">
+          I'm a software engineer who learns by building. Most of my side projects start
+          because I want to understand how something works — lately that's been
+          <span class="text-text">AI tooling and RAG systems</span>.
+          I studied Computer Engineering at ISEP in Porto, Portugal, and I'm currently
+          working remotely from the US.
+        </p>
+      </div>
+    </section>
+
+    <!-- Selected Projects -->
+    <section class="section-fade fade-in py-16 sm:py-20 px-6 relative">
+      <div class="dot-grid absolute inset-0 opacity-30 pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-5xl mx-auto relative">
+        <div class="flex items-baseline justify-between mb-8">
+          <h2 class="text-xl font-bold tracking-tight section-heading">Selected Projects</h2>
+          <a href="/projects" class="text-sm text-text-muted hover:text-text transition-colors duration-200 font-mono">
+            all &rarr;
+          </a>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {featuredProjects.map((project, i) => (
+            <div class="fade-in" style={`transition-delay: ${i * 80}ms`}>
+              <ProjectCard
+                title={project.data.title}
+                description={project.data.description}
+                technologies={project.data.technologies}
+                status={project.data.status}
+                type={project.data.type}
+                url={project.data.url}
+                github={project.data.github}
+                slug={project.id}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section-fade fade-in py-16 sm:py-20 px-6 bg-bg-subtle">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-xl font-bold tracking-tight mb-10 section-heading">Experience</h2>
+        <div class="space-y-10">
+          {allExperience.map((exp) => (
+            <ExperienceEntry
+              role={exp.data.role}
+              company={exp.data.company}
+              location={exp.data.location}
+              startDate={exp.data.startDate}
+              endDate={exp.data.endDate}
+              bullets={exp.data.bullets}
+              technologies={exp.data.technologies}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

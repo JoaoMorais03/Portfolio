@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const statusLabel = {
+  'live': 'Live',
+  'in-development': 'In Development',
+  'in-progress': 'In Progress',
+  'completed': 'Completed',
+}[project.data.status] ?? project.data.status;
+
+const statusColor = {
+  'live': 'text-green-400',
+  'in-development': 'text-yellow-400',
+  'in-progress': 'text-yellow-400',
+  'completed': 'text-text-muted',
+}[project.data.status] ?? 'text-text-muted';
+---
+
+<BaseLayout title={`${project.data.title} | João Morais`} description={project.data.description}>
+  <Navbar />
+
+  <main class="pt-14">
+    <section class="py-20 px-6">
+      <div class="max-w-3xl mx-auto">
+        <a href="/projects" class="text-sm text-text-muted hover:text-text transition-colors duration-150 mb-8 inline-block">&larr; All Projects</a>
+
+        <!-- Header -->
+        <div class="mb-10">
+          <h1 class="text-2xl font-bold tracking-tight mb-3">{project.data.title}</h1>
+          <p class="text-text-muted leading-relaxed mb-4">{project.data.description}</p>
+
+          <div class="flex flex-wrap items-center gap-3 text-sm">
+            <span class:list={['font-mono text-xs', statusColor]}>{statusLabel}</span>
+
+            {project.data.url && (
+              <a
+                href={project.data.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:opacity-80 transition-opacity duration-150 font-mono text-xs"
+              >
+                Visit site &rarr;
+              </a>
+            )}
+
+            {project.data.github && (
+              <a
+                href={project.data.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-text-muted hover:text-text transition-colors duration-150 font-mono text-xs"
+              >
+                Source code &rarr;
+              </a>
+            )}
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {project.data.technologies.map((tech: string) => (
+              <span class="px-2 py-0.5 text-xs font-mono text-text-muted border border-border rounded">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-border mb-10" />
+
+        <!-- MDX Content -->
+        <article class="prose">
+          <Content />
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

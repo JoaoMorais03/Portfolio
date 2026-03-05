@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Section from '../../components/Section.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Projects | João Morais" description="Software projects by João Morais — client work, personal projects, and university projects.">
+  <Navbar />
+
+  <main class="pt-14">
+    <Section>
+      <a href="/" class="text-sm text-text-muted hover:text-text transition-colors duration-150 mb-8 inline-block">&larr; Home</a>
+      <h1 class="text-2xl font-bold tracking-tight mb-2 section-heading">Projects</h1>
+      <p class="text-text-muted mb-10">A selection of things I've built — client work, personal experiments, and university projects.</p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        {projects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            technologies={project.data.technologies}
+            status={project.data.status}
+            type={project.data.type}
+            url={project.data.url}
+            github={project.data.github}
+            slug={project.id}
+          />
+        ))}
+      </div>
+    </Section>
+  </main>
+
+  <Footer />
+</BaseLayout>

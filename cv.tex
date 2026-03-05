@@ -65,16 +65,16 @@
     \textbf{\Huge \scshape João Pedro Carneiro de Morais} \\ \vspace{1pt}
     \small +351 962-041-130 $|$ \href{mailto:jp.morais800@gmail.com}{jp.morais800@gmail.com} $|$
     \href{https://www.linkedin.com/in/joão-pedro-de-morais-8922782b8}{LinkedIn} $|$
-    \href{https://github.com/JoaoMorais03}{GitHub} $|$
-    \href{https://portfolio-plum-five-48.vercel.app/}{Portfolio}
+    \href{https://github.com/JoaoMorais03}{GitHub}
 \end{center}
 
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
     \textbf{Backend}: Java, Spring Boot, Node.js, Express.js, Python, REST APIs, WebSockets \\
-    \textbf{Frontend}: React, Next.js, Vue3, TypeScript, JavaScript, Swift/SwiftUI, Tailwind CSS \\
-    \textbf{Data \& DevOps}: PostgreSQL, SQL Server, MongoDB, Docker, AWS (EC2, S3, RDS), Git, CI/CD, Liquibase
+    \textbf{Frontend}: React, Next.js, Vue3, TypeScript, JavaScript, Swift/SpriteKit, Tailwind CSS \\
+    \textbf{Data \& DevOps}: PostgreSQL, SQL Server, MongoDB, Docker, AWS (Lightsail, S3, CloudFront), Git, CI/CD, Liquibase \\
+    \textbf{AI \& Search}: RAG, MCP, Qdrant, Redis, BullMQ, Drizzle ORM
     }}
  \end{itemize}
 
@@ -84,49 +84,48 @@
       {Prozis}{Porto, Portugal}
       {Full-Stack Developer}{July 2025 -- Present}
       \resumeItemListStart
-        \resumeItem{Core developer on \textbf{Prozis Hub}, one of 2 largest internal systems at Europe's leading sports nutrition company, building enterprise PLM software with \textbf{Vue3/Spring Boot} serving \textbf{1000+ daily users}}
+        \resumeItem{Core developer on \textbf{Prozis Hub}, one of 2 largest internal systems at Europe's leading sports nutrition company, building enterprise PLM software with \textbf{Vue3/Spring Boot}}
         \resumeItem{Entrusted with \textbf{production deployment responsibilities} typically reserved for senior engineers, independently shipping features across product development, QA, and operations teams}
-        \resumeItem{Architected RESTful APIs and optimized SQL Server queries, \textbf{reducing data processing time by 35\%} through JPA native queries, indexing strategies, and Liquibase migrations}
-        \resumeItem{Engineered high-performance systems handling \textbf{200+ concurrent requests} with sub-200ms response times; led code reviews and mentored junior developers on architecture patterns}
+        \resumeItem{Optimized SQL Server queries and indexing strategies, \textbf{reducing data processing time by 35\%} through JPA native queries and Liquibase migrations}
       \resumeItemListEnd
 
     \resumeSubheading
       {Flavibyte}{Chaves, Portugal}
-      {Founder \& Lead Developer}{Jan 2025 -- Present}
+      {Side Projects}{Jan 2025 -- Present}
       \resumeItemListStart
-        \resumeItem{Founded software company delivering \textbf{custom full-stack solutions} for SMB clients; acquired \textbf{2 clients} through direct outreach and referrals}
-        \resumeItem{Building \textbf{Gráfica Sinal e-commerce platform}: React/Next.js storefront with Node.js backend, AWS infrastructure (EC2, S3, RDS), integrated payment processing, and admin dashboard}
-        \resumeItem{Developing \textbf{Porfía dos Leitões restaurant system}: table reservation management, real-time availability, automated confirmation emails, and customer analytics dashboard}
-        \resumeItem{Managing full project lifecycle from client requirements gathering to deployment, implementing CI/CD pipelines and providing ongoing maintenance and support}
+        \resumeItem{Registered a small company to take on freelance projects outside of my day job}
+        \resumeItem{Rebuilding \textbf{GraficaSinal.pt} --- e-commerce site for a print company, using Next.js frontend and Express backend}
+        \resumeItem{Built an internal platform to manage clients and track project health, deployed on \textbf{AWS Lightsail} with Docker, Nginx, S3/CloudFront, and GitHub Actions CI/CD}
       \resumeItemListEnd
 
     \resumeSubheading
       {BRAINSTORM Labs}{Remote}
       {Software Developer Intern}{Jan 2025 -- June 2025}
       \resumeItemListStart
-        \resumeItem{Built real-time video conferencing platform with \textbf{React} and \textbf{Agora.io SDK} supporting \textbf{10+ concurrent users} with 99.5\% uptime and adaptive bitrate streaming}
-        \resumeItem{Designed PostgreSQL schema and Node.js/Express backend; containerized with \textbf{Docker} for consistent deployment across environments}
+        \resumeItem{Built real-time video conferencing platform with \textbf{React} and \textbf{Agora.io SDK}}
+        \resumeItem{Designed PostgreSQL schema and Node.js/Express backend; containerized with \textbf{Docker} for consistent deployment}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeProjectHeading
-      {\textbf{Nexus Finance} $|$ \emph{Next.js, TypeScript, Supabase, TanStack Query, Clerk}}{Nov 2024 -- Jan 2025}
+      {\textbf{Tiburcio} $|$ \emph{TypeScript, Node.js, Vue 3, Hono, MCP, RAG, Qdrant, PostgreSQL, Docker}}{}
       \resumeItemListStart
-        \resumeItem{Built financial dashboard for tracking stock and crypto portfolios with real-time price updates via Alpha Vantage and CoinGecko APIs; implemented secure OAuth with MFA}
+        \resumeItem{Open-source RAG agent that indexes codebases into a Qdrant vector database, answering developer questions grounded in actual code. Ships as a web chat UI and an MCP server for Claude Code}
+        \resumeItem{Hybrid search with BM25 + dense vectors (RRF fusion), scheduled re-indexing via BullMQ/Redis, 162 automated tests. MIT licensed, being adopted at Prozis}
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{Hospital Management System} $|$ \emph{React, Node.js, MongoDB, Docker, Jest}}{Sept 2024 -- Jan 2025}
+      {\textbf{Hospital Management App} $|$ \emph{React, .NET/C\#, Prolog, SQL, REST API, Vercel}}{}
       \resumeItemListStart
-        \resumeItem{Led team of 4 developers building healthcare platform with role-based access for doctors, nurses, and administrators; implemented real-time appointment scheduling with conflict detection}
+        \resumeItem{Final-semester university group project (LAPR5). Microservices architecture with .NET backend, React frontend, and a Prolog planning module for scheduling logic. Deployed on Vercel}
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{FamilySync} $|$ \emph{Swift, SwiftUI, Firebase, Core Data}}{Jan 2025 -- Present}
+      {\textbf{Queima25} $|$ \emph{Swift 5+, SpriteKit, iOS 14+}}{}
       \resumeItemListStart
-        \resumeItem{Developing native iOS family management app with offline-first architecture using Core Data sync; push notifications via Firebase Cloud Messaging for task coordination}
+        \resumeItem{iOS party game supporting up to 15 players with five challenge types. Built with SpriteKit for smooth animations, optimized for landscape group play on a shared screen}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
