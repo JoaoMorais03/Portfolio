@@ -3,21 +3,22 @@
     "id": "prozis",
     "role": "Full-Stack Developer",
     "company": "Prozis",
-    "location": "Porto, Portugal",
+    "location": "Remote",
     "startDate": "July 2025",
     "bullets": [
       "Core developer on Prozis Hub, one of 2 largest internal systems at Europe's leading sports nutrition company",
       "Building enterprise PLM software with Vue3/Spring Boot serving 1,000+ daily users",
       "Entrusted with production deployment responsibilities typically reserved for senior engineers",
-      "Reduced data processing time by 35% through query optimization and indexing strategies"
+      "Reduced data processing time by 35% through query optimization and indexing strategies",
+      "Co-building an AI agency with a colleague, developing autonomous development workflows using Claude Code, Kubernetes, and a custom orchestrator built in Go"
     ],
-    "technologies": ["Vue3", "Spring Boot", "SQL Server", "JPA", "Liquibase"]
+    "technologies": ["Vue3", "Spring Boot", "SQL Server", "JPA", "Liquibase", "Go", "Kubernetes"]
   },
   {
     "id": "flavibyte",
     "role": "Side Projects",
     "company": "Flavibyte",
-    "location": "Chaves, Portugal",
+    "location": "Remote",
     "startDate": "Jan 2025",
     "bullets": [
       "Registered a small company to take on freelance projects outside of my day job",
