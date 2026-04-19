@@ -6,11 +6,10 @@
     "location": "Remote",
     "startDate": "July 2025",
     "bullets": [
-      "Core developer on Prozis Hub, one of 2 largest internal systems at Europe's leading sports nutrition company",
-      "Building enterprise PLM software with Vue3/Spring Boot serving 1,000+ daily users",
-      "Entrusted with production deployment responsibilities typically reserved for mid-level engineers",
-      "Reduced data processing time by 35% through query optimization and indexing strategies",
-      "Co-building an AI agency with a colleague, developing autonomous development workflows using Claude Code, Kubernetes, and a custom orchestrator built in Go"
+      "One of 7 engineers owning 5 major internal platforms end-to-end — UI, API, and database. Report directly to the CEO on one of them",
+      "Promoted from junior to mid in under a year after leading data migrations and pushing architecture improvements across the team",
+      "Work across microservices owned by other teams and coordinate with DevOps — comfortable navigating a large-scale production environment",
+      "Pitched and now building an internal AI tool that orchestrates autonomous dev tasks using Claude Code, Kubernetes, and a custom orchestrator in Go"
     ],
     "technologies": ["Vue3", "Spring Boot", "SQL Server", "JPA", "Liquibase", "Go", "Kubernetes"]
   },
@@ -21,7 +20,6 @@
     "location": "Remote",
     "startDate": "Jan 2025",
     "bullets": [
-      "Registered a small company to take on freelance projects outside of my day job",
       "Rebuilding GraficaSinal.pt — an e-commerce site for a print company, using Next.js and Express",
       "Built an internal platform to manage clients and track project health, deployed on AWS Lightsail"
     ],
